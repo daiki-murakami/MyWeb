@@ -23,6 +23,7 @@ jobs:
       - deploy:
           name: Start master deploy
           command: |
+            sudo apt install rsync
             if [ "${CIRCLE_BRANCH}" == "master" ]; then
                 rsync -av --delete --exclude='.git' --exclude='.circleci' ./ ${USER_NAME}@${HOST_NAME}:/environment/MyWeb/
             fi
