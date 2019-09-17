@@ -1,7 +1,6 @@
-ENV LANG C.UTF-8
-
 # Rubyをインストール
 FROM ruby:2.6
+ENV LANG C.UTF-8
 
 # 必要なパッケージをインストール
 RUN curl -sL https://deb.nodesource.com/setup_10.x | bash - \
