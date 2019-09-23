@@ -1,9 +1,0 @@
-default: &default
- source_path: app/javascript  # ソースのルートパス
- source_entry_path: packs   # エントリーポイントのルートパス
- public_output_path: packs  # コンパイルした結果を配置する/public配下のパス 
- cache_path: tmp/cache/webpacker
- 
- # Additional paths webpack should lookup modules
- # ['app/assets', 'engine/foo/app/assets']
- resolved_paths: [] 　　#WebpackでAssetを参照する場合のパス
