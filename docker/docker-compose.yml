@@ -1,7 +1,7 @@
 version: '2'
 services:
   app:
-    build: rails
+    build: &rails
     environment:
       APP_DATABASE_HOST: db
       APP_DATABASE: app_development
@@ -15,7 +15,7 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: root
   webpacker:
-    <<: rails
+    <<: *rails
     command: bundle exec bin/webpack-dev-server
     volumes:
       - .:/Myweb
