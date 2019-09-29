@@ -1,0 +1,12 @@
+<% provide(:title, 'Page Index') %>
+<h1>記事一覧</h1>
+
+<div class="col-md-6 col-md-offset-3">
+    <% @pages.each do |page| %>
+        <%= link_to "#{page.title}", page %>
+    <% end %>
+</div>
+
+<div class = "footer">
+    <%= link_to "トップページ", root_path %>
+</div>

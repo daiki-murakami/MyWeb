@@ -1,0 +1,10 @@
+<% provide(:title, "#{@user.name}") %>
+<%= flash[:success] %>
+<h1><%= @user.name %></h1>
+<%= link_to "記事投稿", pages_new_path %>
+<%= link_to "ログアウト", logout_path %>
+
+<div class = "footer">
+    <%= link_to "ユーザー一覧に戻る", users_index_path %>
+    <%= link_to "トップページ", root_path %>
+</div>

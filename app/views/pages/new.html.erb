@@ -1,0 +1,23 @@
+<% provide(:title, 'Create Page') %>
+<%= flash[:danger] %>
+<h1>Create Page</h1>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for(@page, url: create_path) do |f| %>
+      <%= render 'shared/error_messages' %>
+
+      <%= f.label "タイトル" %>
+      <%= f.text_field :title, class: 'form-control' %>
+
+      <%= f.label "タグ" %>
+      <%= f.select :tag, ["プログラミング関連", "競プロ関連", "その他"],
+       class: 'form-control' %>
+
+      <%= f.label "内容" %>
+      <%= f.text_area :content, class: 'form-control' %>
+
+      <%= f.submit "Create page", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
