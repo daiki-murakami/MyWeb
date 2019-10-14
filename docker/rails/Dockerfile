@@ -37,8 +37,8 @@ RUN bundle install
 #COPY ./config $APP_HOME/config
 
 # マウントできるように公開
-#VOLUME /app/public
-#VOLUME /app/tmp
+VOLUME /app/public
+VOLUME /app/tmp
 
 # コンテナ起動時にRailsサーバを起動
 CMD ["rails", "server"]

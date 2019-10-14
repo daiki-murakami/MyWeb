@@ -11,7 +11,7 @@ services:
       - db
       - webpacker
     volumes:
-      - ../:/usr/local/src
+      - ../:/app
   db:
     build: mysql
     environment:
