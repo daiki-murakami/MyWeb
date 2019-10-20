@@ -9,12 +9,20 @@ services:
       APP_DATABASE_PASSWORD: root
     depends_on:
       - db
+      - webpacker
     volumes:
       - .:/Myweb
   db:
     build: mysql
     environment:
       MYSQL_ROOT_PASSWORD: root
+  webpacker:
+    build: rails
+    command: bundle exec bin/webpack-dev-server
+    volumes:
+      - .:/Myweb
+    ports:
+      - "8080:8080"
   web:
     build: nginx
     ports:
