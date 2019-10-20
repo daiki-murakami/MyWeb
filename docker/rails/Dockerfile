@@ -34,7 +34,7 @@ RUN bundle install
 RUN rails new . --database=mysql
 
 # 設定ファイル書き換え（既存のアプリをマウントする場合は不要）
-# COPY ./config $APP_HOME/config
+COPY ./config $APP_HOME/config
 
 COPY . /app
 
