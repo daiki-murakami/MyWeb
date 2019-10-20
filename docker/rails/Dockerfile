@@ -30,13 +30,13 @@ RUN gem install bundler \
                 webpacker
 RUN bundle install
 
-COPY . /app
-
 # Railsアプリを作成（既存のアプリをマウントする場合は不要）
-# RUN rails new . --database=mysql
+RUN rails new . --database=mysql
 
 # 設定ファイル書き換え（既存のアプリをマウントする場合は不要）
-# COPY ./config $APP_HOME/config
+COPY ./config $APP_HOME/config
+
+COPY . /app
 
 # マウントできるように公開
 VOLUME /app/public
