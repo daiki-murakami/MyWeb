@@ -30,6 +30,8 @@ RUN gem install bundler \
                 webpacker
 RUN bundle install
 
+COPY . /app
+
 # Railsアプリを作成（既存のアプリをマウントする場合は不要）
 # RUN rails new . --database=mysql
 
