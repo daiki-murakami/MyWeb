@@ -9,7 +9,6 @@ services:
       APP_DATABASE_PASSWORD: root
     depends_on:
       - db
-      - webpacker
     volumes:
       - .:/Myweb
   db:
