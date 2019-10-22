@@ -24,14 +24,15 @@ WORKDIR $APP_HOME
 COPY Gemfile $APP_HOME/Gemfile
 COPY Gemfile.lock $APP_HOME/Gemfile.lock
 
-RUN rails new . --database=mysql
-
 # BundlerでGemをインストール
 RUN gem install bundler \
                 nokogiri \
                 webpacker \
                 bootsnap
 RUN bundle install
+
+# Railsアプリを作成（既存のアプリをマウントする場合は不要）
+RUN rails new . --database=mysql
 
 # 設定ファイル書き換え（既存のアプリをマウントする場合は不要）
 COPY ./config $APP_HOME/config
