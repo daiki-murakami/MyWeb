@@ -27,7 +27,8 @@ COPY Gemfile.lock $APP_HOME/Gemfile.lock
 # BundlerでGemをインストール
 RUN gem install bundler \
                 nokogiri \
-                webpacker
+                webpacker \
+                bootsnap
 RUN bundle install
 
 # Railsアプリを作成（既存のアプリをマウントする場合は不要）
