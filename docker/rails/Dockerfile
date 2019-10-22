@@ -30,6 +30,8 @@ RUN gem install bundler \
                 webpacker \
                 bootsnap
 RUN bundle install
+RUN rails webpacker:install
+RUN rails webpacker:install:angular
 
 # Railsアプリを作成（既存のアプリをマウントする場合は不要）
 RUN rails new . --database=mysql
