@@ -30,15 +30,13 @@ RUN gem install bundler \
                 webpacker \
                 bootsnap
 RUN bundle install
-RUN rails webpacker:install
-RUN rails webpacker:install:angular
 
 # Railsアプリを作成（既存のアプリをマウントする場合は不要）
-RUN rails new . --database=mysql
+#RUN rails new . --database=mysql
 
 # 設定ファイル書き換え（既存のアプリをマウントする場合は不要）
-COPY ./config $APP_HOME/config
-COPY . $APP_HOME
+#COPY ./config $APP_HOME/config
+#COPY . $APP_HOME
 
 # マウントできるように公開
 VOLUME $APP_HOME/public
