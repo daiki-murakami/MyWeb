@@ -35,10 +35,11 @@ RUN rails new . --database=mysql
 
 # 設定ファイル書き換え（既存のアプリをマウントする場合は不要）
 COPY ./config $APP_HOME/config
+COPY . $APP_HOME
 
 # マウントできるように公開
-VOLUME /app/public
-VOLUME /app/tmp
+VOLUME $APP_HOME/public
+VOLUME $APP_HOME/tmp
 
 # コンテナ起動時にRailsサーバを起動
 CMD ["rails", "server"]
