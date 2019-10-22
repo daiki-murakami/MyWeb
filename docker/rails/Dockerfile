@@ -21,8 +21,8 @@ ENV APP_HOME /app
 WORKDIR $APP_HOME
 
 # ホストのGemfileなどをコンテナへコピー
-COPY Gemfile $APP_HOME/Gemfile
-COPY Gemfile.lock $APP_HOME/Gemfile.lock
+ADD Gemfile $APP_HOME/Gemfile
+ADD Gemfile.lock $APP_HOME/Gemfile.lock
 
 # BundlerでGemをインストール
 RUN gem install bundler \
@@ -36,7 +36,7 @@ RUN bundle install
 
 # 設定ファイル書き換え（既存のアプリをマウントする場合は不要）
 #COPY ./config $APP_HOME/config
-#COPY . $APP_HOME
+ADD . $APP_HOME
 
 # マウントできるように公開
 VOLUME $APP_HOME/public
