@@ -27,7 +27,6 @@ ADD Gemfile.lock $APP_HOME/Gemfile.lock
 # BundlerでGemをインストール
 RUN gem install bundler \
                 nokogiri \
-                webpacker \
                 bootsnap
 RUN bundle install
 
