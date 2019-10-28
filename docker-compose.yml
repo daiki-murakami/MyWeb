@@ -1,7 +1,7 @@
 version: '2'
 services:
   app:
-    build: rails
+    build: .
     environment:
       APP_DATABASE_HOST: db
       APP_DATABASE: app_development
