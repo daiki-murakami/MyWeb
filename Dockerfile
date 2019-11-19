@@ -22,7 +22,6 @@ ADD Gemfile $APP_HOME/Gemfile
 ADD Gemfile.lock $APP_HOME/Gemfile.lock
 
 # BundlerでGemをインストール
-RUN gem install listen
 RUN bundle install
 
 # 設定ファイル書き換え（既存のアプリをマウントする場合は不要）
